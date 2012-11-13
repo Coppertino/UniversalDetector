@@ -14,6 +14,8 @@
 
 - (NSString *)stringByConvertionFrom:(NSStringEncoding)fromEncoding toEncoding:(NSStringEncoding)toEncoding;
 {
+    if (fromEncoding == 0 || toEncoding == 0 || fromEncoding == toEncoding)
+        return self;
     NSUInteger numbersOfBytes = [self maximumLengthOfBytesUsingEncoding:fromEncoding];
     
     void *stringBytes = malloc(numbersOfBytes);
@@ -28,6 +30,9 @@
 
 - (NSStringEncoding)getUsedEncodingByEncoding:(NSStringEncoding)refEncoding confidence:(float *)confidence;
 {
+    if (refEncoding == 0)
+        return NSUTF8StringEncoding;
+    
     NSUInteger bytesLength = [self maximumLengthOfBytesUsingEncoding:refEncoding];
     void * bytes = malloc(bytesLength);
     [self getBytes:bytes maxLength:bytesLength usedLength:NULL encoding:refEncoding options:NSStringEncodingConversionAllowLossy range:NSMakeRange(0, self.length) remainingRange:NULL];
