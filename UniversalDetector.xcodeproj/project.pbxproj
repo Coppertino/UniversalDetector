@@ -811,6 +811,7 @@
 				0754B3F616525F6F008EB4FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B0DDCAE0A2D0AFD0009B697 /* Build configuration list for PBXNativeTarget "DetectorTest" */ = {
 			isa = XCConfigurationList;

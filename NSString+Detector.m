@@ -14,7 +14,7 @@
 
 - (NSString *)stringByConvertionFrom:(NSStringEncoding)fromEncoding toEncoding:(NSStringEncoding)toEncoding;
 {
-    NSUInteger numbersOfBytes = [self lengthOfBytesUsingEncoding:fromEncoding];
+    NSUInteger numbersOfBytes = [self maximumLengthOfBytesUsingEncoding:fromEncoding];
     
     void *stringBytes = malloc(numbersOfBytes);
     
@@ -28,12 +28,12 @@
 
 - (NSStringEncoding)getUsedEncodingByEncoding:(NSStringEncoding)refEncoding confidence:(float *)confidence;
 {
-    NSUInteger bytesLength = [self lengthOfBytesUsingEncoding:refEncoding];
+    NSUInteger bytesLength = [self maximumLengthOfBytesUsingEncoding:refEncoding];
     void * bytes = malloc(bytesLength);
     [self getBytes:bytes maxLength:bytesLength usedLength:NULL encoding:refEncoding options:NSStringEncodingConversionAllowLossy range:NSMakeRange(0, self.length) remainingRange:NULL];
     
     UniversalDetector *detector = [[[UniversalDetector alloc] init] autorelease];
-    [detector analyzeBytes:bytes length:bytesLength];
+    [detector analyzeBytes:bytes length:self.length];
     free(bytes); bytes = NULL;
     
 //    NSLog(@"\n\nDetected encoding: %@ (%f%%)\n\n", [detector MIMECharset], detector.confidence*100);

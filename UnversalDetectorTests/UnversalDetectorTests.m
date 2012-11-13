@@ -34,4 +34,14 @@
     NSLog(@"\n\nConvetions result: %@\n\n", rightString);
 }
 
+- (void)testOnemore;
+{
+    NSString *fileName = @"Ïîiçä ◊óæà ëﬂáîâ.mp3";
+    NSString *title = @"Ïîiçä ◊óæà ëﬂáîâ";
+    NSString *album = @"Òàì, äå íàñ íåìà";
+    
+    NSLog(@"\n\nTitle:\t%@\nFile:\t%@\nAlbum:\t%@\n", [fileName stringByAutoconvertingCharset], [title stringByAutoconvertingCharset], [album stringByAutoconvertingCharset]);
+}
+
 @end
+
