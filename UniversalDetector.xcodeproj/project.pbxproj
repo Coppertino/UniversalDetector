@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0754B3D4165257CE008EB4FF /* NSString+Detector.h in Headers */ = {isa = PBXBuildFile; fileRef = 0754B3D2165257CE008EB4FF /* NSString+Detector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0754B3D5165257CE008EB4FF /* NSString+Detector.m in Sources */ = {isa = PBXBuildFile; fileRef = 0754B3D3165257CE008EB4FF /* NSString+Detector.m */; };
+		0754B3E316525F6F008EB4FF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0754B3E216525F6F008EB4FF /* SenTestingKit.framework */; };
+		0754B3E516525F6F008EB4FF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0754B3E416525F6F008EB4FF /* Cocoa.framework */; };
+		0754B3EF16525F6F008EB4FF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0754B3ED16525F6F008EB4FF /* InfoPlist.strings */; };
+		0754B3F216525F6F008EB4FF /* UnversalDetectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0754B3F116525F6F008EB4FF /* UnversalDetectorTests.m */; };
+		0754B3F816525FF2008EB4FF /* UniversalDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* UniversalDetector.framework */; };
 		1B0DDB5A0A2CB1B30009B697 /* CharDistribution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B0DDB1A0A2CB1B30009B697 /* CharDistribution.cpp */; };
 		1B0DDB600A2CB1B30009B697 /* JpCntx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B0DDB200A2CB1B30009B697 /* JpCntx.cpp */; };
 		1B0DDB620A2CB1B30009B697 /* LangBulgarianModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B0DDB220A2CB1B30009B697 /* LangBulgarianModel.cpp */; };
@@ -44,6 +51,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0754B3F916525FF6008EB4FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = UniversalDetector;
+		};
 		1B0DDCBA0A2D0C490009B697 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
@@ -54,6 +68,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0754B3D2165257CE008EB4FF /* NSString+Detector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Detector.h"; sourceTree = "<group>"; };
+		0754B3D3165257CE008EB4FF /* NSString+Detector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Detector.m"; sourceTree = "<group>"; };
+		0754B3E016525F6F008EB4FF /* UnversalDetectorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnversalDetectorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0754B3E216525F6F008EB4FF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		0754B3E416525F6F008EB4FF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		0754B3E716525F6F008EB4FF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		0754B3E816525F6F008EB4FF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		0754B3E916525F6F008EB4FF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0754B3EC16525F6F008EB4FF /* UnversalDetectorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnversalDetectorTests-Info.plist"; sourceTree = "<group>"; };
+		0754B3EE16525F6F008EB4FF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0754B3F016525F6F008EB4FF /* UnversalDetectorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnversalDetectorTests.h; sourceTree = "<group>"; };
+		0754B3F116525F6F008EB4FF /* UnversalDetectorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnversalDetectorTests.m; sourceTree = "<group>"; };
+		0754B3F316525F6F008EB4FF /* UnversalDetectorTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UnversalDetectorTests-Prefix.pch"; sourceTree = "<group>"; };
 		1B0DDB140A2CB1B20009B697 /* ChardetInterface.htm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; path = ChardetInterface.htm; sourceTree = "<group>"; };
 		1B0DDB150A2CB1B20009B697 /* UniversalCharsetDetection.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = UniversalCharsetDetection.doc; sourceTree = "<group>"; };
 		1B0DDB190A2CB1B30009B697 /* Big5Freq.tab */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Big5Freq.tab; sourceTree = "<group>"; };
@@ -126,6 +153,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0754B3DC16525F6F008EB4FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0754B3E316525F6F008EB4FF /* SenTestingKit.framework in Frameworks */,
+				0754B3E516525F6F008EB4FF /* Cocoa.framework in Frameworks */,
+				0754B3F816525FF2008EB4FF /* UniversalDetector.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1B0DDCA90A2D0AD10009B697 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -151,8 +188,49 @@
 			children = (
 				8DC2EF5B0486A6940098B216 /* UniversalDetector.framework */,
 				1B0DDCAB0A2D0AD10009B697 /* DetectorTest */,
+				0754B3E016525F6F008EB4FF /* UnversalDetectorTests.octest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		0754B3E116525F6F008EB4FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0754B3E216525F6F008EB4FF /* SenTestingKit.framework */,
+				0754B3E416525F6F008EB4FF /* Cocoa.framework */,
+				0754B3E616525F6F008EB4FF /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0754B3E616525F6F008EB4FF /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0754B3E716525F6F008EB4FF /* AppKit.framework */,
+				0754B3E816525F6F008EB4FF /* CoreData.framework */,
+				0754B3E916525F6F008EB4FF /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		0754B3EA16525F6F008EB4FF /* UnversalDetectorTests */ = {
+			isa = PBXGroup;
+			children = (
+				0754B3F016525F6F008EB4FF /* UnversalDetectorTests.h */,
+				0754B3F116525F6F008EB4FF /* UnversalDetectorTests.m */,
+				0754B3EB16525F6F008EB4FF /* Supporting Files */,
+			);
+			path = UnversalDetectorTests;
+			sourceTree = "<group>";
+		};
+		0754B3EB16525F6F008EB4FF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0754B3EC16525F6F008EB4FF /* UnversalDetectorTests-Info.plist */,
+				0754B3ED16525F6F008EB4FF /* InfoPlist.strings */,
+				0754B3F316525F6F008EB4FF /* UnversalDetectorTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		0867D691FE84028FC02AAC07 /* UniversalCharDet */ = {
@@ -165,6 +243,8 @@
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				089C1665FE841158C02AAC07 /* Resources */,
 				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
+				0754B3EA16525F6F008EB4FF /* UnversalDetectorTests */,
+				0754B3E116525F6F008EB4FF /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
 			);
 			name = UniversalCharDet;
@@ -194,6 +274,8 @@
 				1B0DDC740A2CDD2E0009B697 /* UniversalDetector.m */,
 				3D4F0C3A11F42E3C00603CE3 /* WrappedUniversalDetector.cpp */,
 				3D4F0C3B11F42E3C00603CE3 /* WrappedUniversalDetector.h */,
+				0754B3D2165257CE008EB4FF /* NSString+Detector.h */,
+				0754B3D3165257CE008EB4FF /* NSString+Detector.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -343,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B0DDC750A2CDD2E0009B697 /* UniversalDetector.h in Headers */,
+				0754B3D4165257CE008EB4FF /* NSString+Detector.h in Headers */,
 				3D4F0C3D11F42E3C00603CE3 /* WrappedUniversalDetector.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,6 +433,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		0754B3DF16525F6F008EB4FF /* UnversalDetectorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0754B3F416525F6F008EB4FF /* Build configuration list for PBXNativeTarget "UnversalDetectorTests" */;
+			buildPhases = (
+				0754B3DB16525F6F008EB4FF /* Sources */,
+				0754B3DC16525F6F008EB4FF /* Frameworks */,
+				0754B3DD16525F6F008EB4FF /* Resources */,
+				0754B3DE16525F6F008EB4FF /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0754B3FA16525FF6008EB4FF /* PBXTargetDependency */,
+			);
+			name = UnversalDetectorTests;
+			productName = UnversalDetectorTests;
+			productReference = 0754B3E016525F6F008EB4FF /* UnversalDetectorTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		1B0DDCAA0A2D0AD10009B697 /* DetectorTest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B0DDCAE0A2D0AFD0009B697 /* Build configuration list for PBXNativeTarget "DetectorTest" */;
@@ -403,6 +505,7 @@
 				Japanese,
 				French,
 				German,
+				en,
 			);
 			mainGroup = 0867D691FE84028FC02AAC07 /* UniversalCharDet */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
@@ -411,11 +514,20 @@
 			targets = (
 				8DC2EF4F0486A6940098B216 /* UniversalDetector */,
 				1B0DDCAA0A2D0AD10009B697 /* DetectorTest */,
+				0754B3DF16525F6F008EB4FF /* UnversalDetectorTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0754B3DD16525F6F008EB4FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0754B3EF16525F6F008EB4FF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DC2EF520486A6940098B216 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -425,7 +537,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0754B3DE16525F6F008EB4FF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		0754B3DB16525F6F008EB4FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0754B3F216525F6F008EB4FF /* UnversalDetectorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1B0DDCA80A2D0AD10009B697 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -466,12 +602,18 @@
 				1B0DDC520A2CDA3D0009B697 /* kludge.c in Sources */,
 				1B0DDC760A2CDD2E0009B697 /* UniversalDetector.m in Sources */,
 				3D4F0C3C11F42E3C00603CE3 /* WrappedUniversalDetector.cpp in Sources */,
+				0754B3D5165257CE008EB4FF /* NSString+Detector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0754B3FA16525FF6008EB4FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DC2EF4F0486A6940098B216 /* UniversalDetector */;
+			targetProxy = 0754B3F916525FF6008EB4FF /* PBXContainerItemProxy */;
+		};
 		1B0DDCBB0A2D0C490009B697 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8DC2EF4F0486A6940098B216 /* UniversalDetector */;
@@ -479,7 +621,80 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		0754B3ED16525F6F008EB4FF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0754B3EE16525F6F008EB4FF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		0754B3F516525F6F008EB4FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UnversalDetectorTests/UnversalDetectorTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "UnversalDetectorTests/UnversalDetectorTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		0754B3F616525F6F008EB4FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UnversalDetectorTests/UnversalDetectorTests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "UnversalDetectorTests/UnversalDetectorTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 		1B0DDCAF0A2D0AFD0009B697 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -589,6 +804,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0754B3F416525F6F008EB4FF /* Build configuration list for PBXNativeTarget "UnversalDetectorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0754B3F516525F6F008EB4FF /* Debug */,
+				0754B3F616525F6F008EB4FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		1B0DDCAE0A2D0AFD0009B697 /* Build configuration list for PBXNativeTarget "DetectorTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
