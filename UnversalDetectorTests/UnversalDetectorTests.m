@@ -14,15 +14,6 @@
 - (void)setUp
 {
     [super setUp];
-    
-    // Set-up code here.
-}
-
-- (void)tearDown
-{
-    // Tear-down code here.
-    
-    [super tearDown];
 }
 
 - (void)testString;
@@ -30,16 +21,17 @@
     NSString *wrongString = @"Çàïëåòè (ó ñâî¿ êîñè í³÷)";
     
     NSString *rightString = [wrongString stringByAutoconvertingCharset];
-    NSLog(@"result: %@", rightString);
-//    ST(rightString, wrongString, @"Not converted");
+    NSLog(@"\n\nConvertion result: %@\n\n", rightString);
 }
 
 - (void)testComlicatedString;
 {
     NSString *wrongString = @"Áðþññåëü";
-    NSString *rightString = [wrongString stringByAutoconvertingCharset];
+    NSString *refString = @"Çàïëåòè (ó ñâî¿ êîñè í³÷)";
     
-    NSLog(@"result: %@", rightString);
+    NSString *rightString = [wrongString stringByAutoconvertingCharsetByReferenceToString:refString];
+    
+    NSLog(@"\n\nConvetions result: %@\n\n", rightString);
 }
 
 @end

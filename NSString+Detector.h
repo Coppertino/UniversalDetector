@@ -11,5 +11,6 @@
 @interface NSString (Detector)
 
 - (NSString *)stringByAutoconvertingCharset;
+- (NSString *)stringByAutoconvertingCharsetByReferenceToString:(NSString *)refString;
 
 @end

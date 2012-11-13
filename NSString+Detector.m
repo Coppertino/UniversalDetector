@@ -12,68 +12,79 @@
 
 @implementation NSString (Detector)
 
-- (NSString *)stringByAutoconvertingCharset;
+- (NSString *)stringByConvertionFrom:(NSStringEncoding)fromEncoding toEncoding:(NSStringEncoding)toEncoding;
 {
-    void *detectorPtr = AllocUniversalDetector();
-    if (detectorPtr == NULL)
-        return self;
+    NSUInteger numbersOfBytes = [self lengthOfBytesUsingEncoding:fromEncoding];
     
-    CFStringRef stringRef = (CFStringRef)self;
-    CFIndex stringLength = CFStringGetLength(stringRef);
-    float confidence = 0;
+    void *stringBytes = malloc(numbersOfBytes);
     
-    CFStringRef converterStringRef = NULL;
+    [self getBytes:stringBytes maxLength:numbersOfBytes usedLength:NULL encoding:fromEncoding options:NSStringEncodingConversionAllowLossy range:NSMakeRange(0, self.length) remainingRange:NULL];
     
-    // Getting bytes from string
-    const char *buffer = (const char *)CFStringGetCharactersPtr(stringRef);
-    if (buffer != NULL) {
-        // Phase one: determinate from charset
-        UniversalDetectorHandleData(detectorPtr, buffer, stringLength);
-        const char *fromEncoding = UniversalDetectorCharset(detectorPtr, &confidence);
-        
-        if (fromEncoding != NULL) {
-            CFStringRef fromEncodingString = CFStringCreateWithCString(NULL, fromEncoding, kCFStringEncodingUTF8);
-            CFStringEncoding CFFromEncoding = CFStringConvertIANACharSetNameToEncoding(fromEncodingString);
-            
-            // Second stage - determinate to encoding
-            if (CFFromEncoding != kCFStringEncodingUTF8) {
-                UInt8 *stringBuffer = malloc(stringLength);
-                memset(stringBuffer, 0, stringLength);
-                
-                __unused CFIndex usedBytes = 0;
-                __unused CFIndex converted = CFStringGetBytes(stringRef, CFRangeMake(0, stringLength), CFFromEncoding, '?', false, stringBuffer, stringLength, &usedBytes);
-                
-                if (usedBytes > 0 && converted > 0 ) {
-                    // Last phase: determinate proper encoding and convert
-                    UniversalDetectorReset(detectorPtr);
-                    UniversalDetectorHandleData(detectorPtr, (char *)stringBuffer, stringLength);
-                    const char *toEncoding = UniversalDetectorCharset(detectorPtr, &confidence);
-                    if (toEncoding) {
-                        CFStringRef toEncodingString = CFStringCreateWithCString(NULL, toEncoding, kCFStringEncodingUTF8);
-                        CFStringEncoding CFToEncoding = CFStringConvertIANACharSetNameToEncoding(toEncodingString);
-//                        CFToEncoding = CFStringGetMostCompatibleMacStringEncoding(CFToEncoding);
-                    
-                        converterStringRef = CFStringCreateWithBytes(NULL, stringBuffer, stringLength, CFToEncoding, false);
-                        
-                        NSLog(@"Converting %@ (%@) to %@ (%@) %f%%", self, fromEncodingString, converterStringRef, toEncodingString, confidence * 100);
-                    }
-                }
-                
-                
-                free(stringBuffer); stringBuffer = NULL;
-            }
-        }
-    }
+    if (!stringBytes)
+        return nil;
     
-    FreeUniversalDetector(detectorPtr);
-    
-    if (converterStringRef) {
-        return [(id)converterStringRef autorelease];
-    }
-    
-    return self;
-
+    return [[[NSString alloc] initWithBytesNoCopy:stringBytes length:numbersOfBytes encoding:toEncoding freeWhenDone:YES] autorelease];
 }
 
+- (NSStringEncoding)getUsedEncodingByEncoding:(NSStringEncoding)refEncoding confidence:(float *)confidence;
+{
+    NSUInteger bytesLength = [self lengthOfBytesUsingEncoding:refEncoding];
+    void * bytes = malloc(bytesLength);
+    [self getBytes:bytes maxLength:bytesLength usedLength:NULL encoding:refEncoding options:NSStringEncodingConversionAllowLossy range:NSMakeRange(0, self.length) remainingRange:NULL];
+    
+    UniversalDetector *detector = [[[UniversalDetector alloc] init] autorelease];
+    [detector analyzeBytes:bytes length:bytesLength];
+    free(bytes); bytes = NULL;
+    
+//    NSLog(@"\n\nDetected encoding: %@ (%f%%)\n\n", [detector MIMECharset], detector.confidence*100);
+    
+    if (confidence)
+        *confidence = detector.confidence;
+
+    return detector.encoding;
+}
+
+- (NSString *)stringByAutoconvertingCharsetByReferenceToString:(NSString *)refString;
+{
+    NSStringEncoding fromEncoding, fromRefEncoding;
+    NSStringEncoding toEncoding, toRefEncoding;
+    float confidence = .0, refConfidence = .0;
+    
+    fromEncoding = [self getUsedEncodingByEncoding:NSUnicodeStringEncoding confidence:NULL];
+    
+    // Incase utf8 string - return witout converstion
+    if (fromEncoding == NSUTF8StringEncoding)
+        return self;
+    
+    toEncoding = [self getUsedEncodingByEncoding:fromEncoding confidence:&confidence];
+    
+    if (refString && refString.length > 0) {
+        fromRefEncoding = [refString getUsedEncodingByEncoding:NSUnicodeStringEncoding confidence:NULL];
+        toRefEncoding = [refString getUsedEncodingByEncoding:fromRefEncoding confidence:&refConfidence];
+        
+        if (fromRefEncoding == fromEncoding && refConfidence > confidence)
+            toEncoding = toRefEncoding;
+    }
+    
+    return [self stringByConvertionFrom:fromEncoding toEncoding:toEncoding];
+}
+
+- (NSString *)stringByAutoconvertingCharset;
+{
+    if (self.length == 0)
+        return @"";
+    
+    // Step one: find out from encoding
+    NSStringEncoding fromEncoding = [self getUsedEncodingByEncoding:NSUnicodeStringEncoding confidence:NULL];
+    
+    if (fromEncoding == NSUTF8StringEncoding)
+        return self;
+    
+    // Step two: open data with found encoding and try find out to encoding
+    NSStringEncoding toEncoding = [self getUsedEncodingByEncoding:fromEncoding confidence:NULL];
+
+    // Step three: return converted string
+    return [self stringByConvertionFrom:fromEncoding toEncoding:toEncoding];
+}
 
 @end
