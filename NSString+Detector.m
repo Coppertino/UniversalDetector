@@ -51,9 +51,11 @@
                     if (toEncoding) {
                         CFStringRef toEncodingString = CFStringCreateWithCString(NULL, toEncoding, kCFStringEncodingUTF8);
                         CFStringEncoding CFToEncoding = CFStringConvertIANACharSetNameToEncoding(toEncodingString);
-                        CFToEncoding = CFStringGetMostCompatibleMacStringEncoding(CFToEncoding);
+//                        CFToEncoding = CFStringGetMostCompatibleMacStringEncoding(CFToEncoding);
                     
                         converterStringRef = CFStringCreateWithBytes(NULL, stringBuffer, stringLength, CFToEncoding, false);
+                        
+                        NSLog(@"Converting %@ (%@) to %@ (%@) %f%%", self, fromEncodingString, converterStringRef, toEncodingString, confidence * 100);
                     }
                 }
                 

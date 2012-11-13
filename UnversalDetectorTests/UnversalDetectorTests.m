@@ -36,7 +36,7 @@
 
 - (void)testComlicatedString;
 {
-    NSString *wrongString = @"Ïîiçä ◊óæà ëﬂáîâ";
+    NSString *wrongString = @"Áðþññåëü";
     NSString *rightString = [wrongString stringByAutoconvertingCharset];
     
     NSLog(@"result: %@", rightString);
